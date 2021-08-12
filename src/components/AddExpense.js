@@ -80,6 +80,7 @@ class AddExpense extends React.Component {
           value={ currency }
           onChange={ this.onFieldChange }
           data-testid="currency-input"
+          role="combobox"
         >
           {currencies.map((item) => (
             <option key={ item } data-testid={ item }>
@@ -102,6 +103,7 @@ class AddExpense extends React.Component {
           value={ method }
           onChange={ this.onFieldChange }
           data-testid="method-input"
+          role="combobox"
         >
           {methods.map((item) => (
             <option key={ item }>
@@ -124,6 +126,7 @@ class AddExpense extends React.Component {
           value={ tag }
           onChange={ this.onFieldChange }
           data-testid="tag-input"
+          role="combobox"
         >
           {tags.map((item) => (
             <option key={ item } className="tags">
@@ -179,7 +182,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 AddExpense.propTypes = {
-  currencies: PropTypes.objectOf(PropTypes.object).isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.object).isRequired,
   saveExpense: PropTypes.func.isRequired,
   currentID: PropTypes.number.isRequired,
 };

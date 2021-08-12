@@ -173,7 +173,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 AddExpense.propTypes = {
-  currencies: PropTypes.objectOf(PropTypes.object).isRequired,
+  currencies: PropTypes.arrayOf(PropTypes.object).isRequired,
   expenseID: PropTypes.string.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
   finishEdit: PropTypes.func.isRequired,
